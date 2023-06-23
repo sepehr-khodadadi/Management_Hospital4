@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" >
+   <children>
+      <FontAwesomeIcon glyphName="FIRE" layoutX="143.0" layoutY="328.0" size="30em">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0" startY="0.9015151768019706">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.21707317073170732">
+                     <color>
+                        <Color red="0.9599999785423279" green="0.5428507328033447" blue="0.02879999950528145" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.40243902439024387">
+                     <color>
+                        <Color red="0.7894737124443054" green="0.011695906519889832" blue="0.011695906519889832" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.6146341463414634">
+                     <color>
+                        <Color red="1.0" green="0.8860448002815247" blue="0.20999999344348907" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.7682926829268293">
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </FontAwesomeIcon>
+   </children>
+</AnchorPane>

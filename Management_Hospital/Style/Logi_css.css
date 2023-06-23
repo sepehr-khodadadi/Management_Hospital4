@@ -1,0 +1,133 @@
+.textusername-admin:focused{
+  -fx-border-color:linear-gradient(to bottom right, #626469,#4286f4);
+  -fx-border-width: 1px 1px 2px 1px;
+
+}
+.textusername-doctor:focused{
+  -fx-border-color:linear-gradient(to bottom right, #696969, #13c7b4);
+  -fx-border-width: 1px 0px 2px 0px;
+
+}.textusername-receptor:focused{
+  -fx-border-color:linear-gradient(to bottom right, #696969, #00a105);
+  -fx-border-width: 1px 0px 2px 0px;
+
+}.textusername-patient:focused{
+  -fx-border-color:linear-gradient(to bottom right, #f11010, #ffae00);
+  -fx-border-width: 1px 1px 2px 1px;
+
+}
+.backgraned1{
+  -fx-background-color:linear-gradient(to bottom right, #d4dde3, #bbc1d0);
+
+}
+
+.btn_admin {
+  -fx-background-color: linear-gradient(to bottom right, #373b44, #4286f4);
+}
+.btn_admin:hover{
+  -fx-background-color:linear-gradient(to bottom right, #515560, #69a2fc);
+  -fx-text-fill: #fff ;
+}
+.btn_admin:pressed{
+  -fx-background-color: #fff;
+  -fx-text-fill: #66f5ff ;
+}.btn_doctor {
+  -fx-background-color: linear-gradient(to bottom right, #373b44, #44f2e0);
+}
+.btn_doctor:hover{
+  -fx-background-color:linear-gradient(to bottom right, #464a54,#5cf2e0);
+  -fx-text-fill: #fff ;
+}
+.btn_doctor:pressed{
+  -fx-background-color: #fff;
+  -fx-text-fill: #66f5ff ;
+}.btn_receptor {
+  -fx-background-color: linear-gradient(to bottom right, #373b44, #00a105);
+}
+.btn_receptor:hover{
+  -fx-background-color:linear-gradient(to bottom right, #505562, #15b71a);
+  -fx-text-fill: #fff ;
+}
+.btn_receptor:pressed{
+  -fx-background-color: #fff;
+  -fx-text-fill: #66f5ff ;
+}.btn_patient {
+  -fx-background-color: linear-gradient(to bottom right, #f11010, #ffae00);
+}
+.btn_patient:hover{
+  -fx-background-color:linear-gradient(to bottom right, #f32424, #fac02d);
+  -fx-text-fill: #fff ;
+}
+.btn_patient:pressed{
+  -fx-background-color: #fff;
+  -fx-text-fill: #66f5ff ;
+}
+.bag_Admin{
+  -fx-background-color: linear-gradient(to bottom right, #0e1f44, #052f6b);
+}
+.but_Admin{
+  -fx-background-color: null;
+  -fx-background-radius: 0px;
+}
+.but_Admin:hover{
+  -fx-background-color: linear-gradient(to bottom right, #12244f, #0a3d79);
+}
+.but_Admin:focused{
+  -fx-background-color: #fff;
+  -fx-text-fill: #66f5ff ;
+}.bag_Doctor{
+  -fx-background-color: linear-gradient(to bottom right, #324b3b, #02c58b);
+}
+.but_Doctor{
+  -fx-background-color: null;
+  -fx-background-radius: 0px;
+}
+.but_Doctor:hover{
+  -fx-background-color: linear-gradient(to bottom right, #1a6257, #0a8f70);
+}
+.but_Doctor:focused{
+  -fx-background-color: #fff;
+  -fx-text-fill: #66f5ff ;
+}.bag_Receptor{
+  -fx-background-color: linear-gradient(to bottom right, #05380b, #057a12);
+}
+.but_Receptor{
+  -fx-background-color: null;
+  -fx-background-radius: 0px;
+}
+.but_Receptor:hover{
+  -fx-background-color: linear-gradient(to bottom right, #05380b, #1cad26);
+}
+.but_Receptor:focused{
+  -fx-background-color: #fff;
+  -fx-text-fill: #66f5ff ;
+}
+.but_AdminAdd{
+  -fx-background-color: #083365FF;
+}
+.but_AdminAdd:hover{
+  -fx-background-color: #0f4a8d;
+}
+.but_AdminAdd:focused{
+  -fx-background-color: #fff;
+  -fx-text-fill: #66f5ff ;
+}.but_AdminUp{
+  -fx-background-color: #083365FF;
+}
+.but_AdminUp:hover{
+  -fx-background-color: #0f4a8d;
+}
+.but_AdminUp:focused{
+  -fx-background-color: #fff;
+  -fx-text-fill: #00ff2a;
+}.but_AdminD{
+  -fx-background-color: #083365FF;
+}
+.but_AdminD:hover{
+  -fx-background-color: #0f4a8d;
+
+}
+.but_AdminD:focused{
+  -fx-background-color: #fff;
+  -fx-text-fill: #ff0000;
+}

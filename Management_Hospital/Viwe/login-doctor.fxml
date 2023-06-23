@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="500.0" spacing="10.0" styleClass="backgraned1" stylesheets="@../Style/Logi_css.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Management_Hospital.Controller.LoginPagecontrol">
+   <children>
+      <FontAwesomeIcon glyphName="USER_MD" size="15em">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.21568627655506134" green="0.23137255012989044" blue="0.2666666805744171" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.2666666805744171" green="0.9490196108818054" blue="0.8784313797950745" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </FontAwesomeIcon>
+      <Label text="LOGIN DOCTOR" textFill="WHITE">
+         <font>
+            <Font name="Tahoma" size="24.0" />
+         </font>
+      </Label>
+      <VBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="63.0" prefWidth="374.0">
+         <children>
+            <Label text="USERNAME" textFill="#797979">
+               <font>
+                  <Font name="Tahoma" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="username_doctor" prefHeight="31.0" prefWidth="374.0" styleClass="textusername-doctor" />
+         </children>
+      </VBox>
+      <VBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="78.0" prefWidth="374.0">
+         <children>
+            <Label text="PASSWORD" textFill="#767676" />
+            <PasswordField fx:id="password_doctor" prefHeight="30.0" prefWidth="374.0" styleClass="textusername-doctor" />
+            <CheckBox mnemonicParsing="false" prefHeight="26.0" prefWidth="129.0" text="SHOW PASSWORD" textFill="#766f6f">
+               <font>
+                  <Font name="Tahoma" size="12.0" />
+               </font>
+            </CheckBox>
+         </children>
+      </VBox>
+      <HBox alignment="BOTTOM_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="57.0" prefWidth="374.0" spacing="30.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#login" prefHeight="40.0" prefWidth="497.0" styleClass="btn_doctor" text="LOGIN">
+               <font>
+                  <Font name="Tahoma" size="19.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+      <HBox alignment="BOTTOM_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="63.0" prefWidth="374.0">
+         <children>
+            <MenuButton fx:id="hospita" alignment="CENTER" mnemonicParsing="false" onAction="#login" prefHeight="38.0" prefWidth="375.0" styleClass="btn_doctor" text="DOCTOR">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#admin_btn" text="ADMIN" />
+                  <MenuItem mnemonicParsing="false" onAction="#receptor_btn" text="RECEPTOR" />
+                  <MenuItem mnemonicParsing="false" onAction="#patient_btn" text="PATIENT" />
+               </items>
+               <font>
+                  <Font name="Tahoma" size="18.0" />
+               </font>
+            </MenuButton>
+         </children>
+      </HBox>
+   </children>
+</VBox>
