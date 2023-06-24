@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Management_Hospital.Controller.Admins.All_List">
    <children>
       <TableView fx:id="doctor_tabel" layoutX="7.0" layoutY="64.0" prefHeight="190.0" prefWidth="1186.0" style="-fx-border-color: #072478;" styleClass="backTable">
          <columns>
