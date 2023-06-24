@@ -9,6 +9,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 
 
+import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
@@ -21,10 +22,7 @@ import java.util.ResourceBundle;
 public class AdminController implements Initializable{
     public BorderPane admin_main;
     public BorderPane staf_list;
-
-
-
-
+    public Button all_but;
 
 
     public void admin_home() throws IOException {
@@ -36,7 +34,19 @@ public class AdminController implements Initializable{
     }
 
     public void admin_list() throws IOException {
-        set_sCen("../viwe/Admin/list-stuff.fxml" );
+
+        Parent root = null;
+        root = FXMLLoader.load(getClass().getResource("../viwe/Admin/list-stuff.fxml"));
+
+        admin_main.setCenter(root);
+        staf_list = (BorderPane) root;
+
+        Parent roott = null;
+        roott = FXMLLoader.load(getClass().getResource("../Viwe/Admin/Liststaff/list-all.fxml"));
+
+        staf_list.setCenter(roott);
+
+
 
 
     }
@@ -86,7 +96,8 @@ public class AdminController implements Initializable{
 
     }
 
-    public void all_personel(ActionEvent actionEvent) throws IOException {
+    public void all_personel() throws IOException {
+        set_Admilist("../Viwe/Admin/Liststaff/list-all.fxml");
 
     }
     public void reloadTable(){

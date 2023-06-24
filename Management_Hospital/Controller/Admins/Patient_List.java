@@ -5,6 +5,8 @@ import Management_Hospital.Model.Patient;
 import Management_Hospital.Model.Receptor;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ChoiceBox;
@@ -31,6 +33,7 @@ public class Patient_List implements Initializable {
     public TextField lastname_patient;
     public TextField password_patient;
     public ChoiceBox<Integer> choiceShifts;
+    public TextField text_search_patient;
     ObservableList<Patient> observableList = FXCollections.observableArrayList();
     public void test_t(ActionEvent actionEvent) {
     }
@@ -71,5 +74,33 @@ public class Patient_List implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         reloadTable();
         choiceShifts.getItems().addAll(1000 , 2000 ,3000 , 5000);
+
+        FilteredList<Patient> filteredList = new FilteredList<>(observableList, b -> true);
+        text_search_patient.textProperty().addListener((observable, oldValue, newValue) -> {
+            filteredList.setPredicate(doctor -> {
+                if (newValue.isEmpty() || newValue.isBlank() || newValue==null){
+                    return  true ;
+                }
+                String search = newValue.toLowerCase();
+                if (doctor.getName().toLowerCase().contains(search)){
+                    return true;
+                } else if (doctor.getLastname().toLowerCase().contains(search)){
+                    return true;
+                } else if (doctor.getEmail().toLowerCase().contains(search)){
+                    return true;
+                } else if (doctor.getUsername().toLowerCase().contains(search)){
+                    return true;
+                }else if (String.valueOf(doctor.getDoctor()).contains(search)){
+                    return true;
+                } else if (String.valueOf(doctor.getWallet()).contains(search)){
+                    return true;
+                }else {
+                    return false;
+                }
+            });
+        });
+        SortedList<Patient> sortedList = new SortedList<>(filteredList);
+        sortedList.comparatorProperty().bind(patient_tabel.comparatorProperty());
+        patient_tabel.setItems(sortedList);
     }
 }

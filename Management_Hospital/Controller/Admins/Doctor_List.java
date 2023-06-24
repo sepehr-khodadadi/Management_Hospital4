@@ -172,21 +172,21 @@ public class Doctor_List implements Initializable {
                     return  true ;
                 }
                 String search = newValue.toLowerCase();
-                if (doctor.getName().toLowerCase().indexOf(search) > -1){
+                if (doctor.getName().toLowerCase().contains(search)){
                     return true;
-                } else if (doctor.getLastname().toLowerCase().indexOf(search) > -1){
+                } else if (doctor.getLastname().toLowerCase().contains(search)){
                     return true;
-                } else if (doctor.getEmail().toLowerCase().indexOf(search) > -1){
+                } else if (doctor.getEmail().toLowerCase().contains(search)){
                     return true;
-                } else if (doctor.getUsername().toLowerCase().indexOf(search) > -1){
+                } else if (doctor.getUsername().toLowerCase().contains(search)){
                     return true;
-                }else if (String.valueOf(doctor.getPoint()).indexOf(search) > -1){
+                }else if (String.valueOf(doctor.getPoint()).contains(search)){
                     return true;
-                } else if (doctor.getPatient().toLowerCase().indexOf(search) > -1){
+                } else if (doctor.getPatient().toLowerCase().contains(search)){
                     return true;
-                } else if (doctor.getExpertise().toLowerCase().indexOf(search) > -1){
+                } else if (doctor.getExpertise().toLowerCase().contains(search)){
                     return true;
-                } else if (String.valueOf(doctor.getIncome()).indexOf(search) > -1){
+                } else if (String.valueOf(doctor.getIncome()).contains(search)){
                     return true;
                 }else {
                     return false;

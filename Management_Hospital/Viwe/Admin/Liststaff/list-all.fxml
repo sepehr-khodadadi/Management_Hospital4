@@ -30,9 +30,10 @@
             <TableColumn fx:id="dcr_cul_name1" prefWidth="141.60000324249268" text="NAME" />
             <TableColumn fx:id="dcr_cul_lastname1" prefWidth="183.1999969482422" text="LASTNAME" />
             <TableColumn fx:id="dcr_cul_email1" prefWidth="272.0" text="EMAIL" />
-            <TableColumn fx:id="dcr_cul_username1" prefWidth="231.20001220703125" text="USERNAME" />
-            <TableColumn fx:id="dcr_cul_shift" prefWidth="243.20001220703125" text="WORK SHIFT" />
-            <TableColumn fx:id="dcr_cul_income1" minWidth="0.0" prefWidth="116.0" text="INCOME" />
+            <TableColumn fx:id="dcr_cul_username1" prefWidth="216.79998779296875" text="USERNAME" />
+            <TableColumn fx:id="dcr_cul_shift" prefWidth="215.20001220703125" text="WORK SHIFT" />
+            <TableColumn fx:id="rcp_number" minWidth="0.0" prefWidth="77.5999755859375" text="NUMBER" />
+            <TableColumn fx:id="dcr_cul_income1" minWidth="0.0" prefWidth="75.99981689453125" text="INCOME" />
          </columns>
       </TableView>
       <TableView fx:id="patient_tabel" layoutX="7.0" layoutY="600.0" prefHeight="190.0" prefWidth="1186.0" style="-fx-border-color: #072478;">
@@ -50,7 +51,7 @@
             <Insets left="30.0" />
          </padding>
       </TextField>
-      <TextField fx:id="text_search_recrptor" layoutX="713.0" layoutY="288.0" prefHeight="30.0" prefWidth="479.0" style="-fx-border-radius: 10;">
+      <TextField fx:id="text_search_receptor" layoutX="713.0" layoutY="288.0" prefHeight="30.0" prefWidth="479.0" style="-fx-border-radius: 10;">
          <padding>
             <Insets left="30.0" />
          </padding>

@@ -23,7 +23,7 @@ public class Receptor extends Personnel{
 
     }
 
-    public Receptor(String name, String lastname, String email, String username, String password, int num ,String shifts, int income) {
+    public Receptor(String name, String lastname, String email, String username, String password , int income,String shifts, int num) {
 
         super(name, lastname, email, username, password);
         this.shifts = shifts;

@@ -4,6 +4,8 @@ import Management_Hospital.Model.DataBase;
 import Management_Hospital.Model.Receptor;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -16,6 +18,7 @@ import java.util.ResourceBundle;
 
 public class Receptor_List implements Initializable {
 
+    public TableColumn<Receptor, Integer> rcp_number;
     @FXML
     private ChoiceBox<String> choiceShifts;
 
@@ -32,7 +35,7 @@ public class Receptor_List implements Initializable {
     private TableColumn<Receptor, String> dcr_cul_name;
 
     @FXML
-    private TableColumn<Receptor, Integer> dcr_cul_shift;
+    private TableColumn<Receptor, String> dcr_cul_shift;
 
     @FXML
     private TableColumn<Receptor, String> dcr_cul_username;
@@ -119,7 +122,9 @@ public class Receptor_List implements Initializable {
         dcr_cul_email.setCellValueFactory(new PropertyValueFactory<Receptor, String>("email"));
         dcr_cul_username.setCellValueFactory(new PropertyValueFactory<Receptor, String>("username"));
         dcr_cul_income.setCellValueFactory(new PropertyValueFactory<Receptor , Integer>("income"));
-        dcr_cul_shift.setCellValueFactory(new PropertyValueFactory<Receptor , Integer>("num"));
+        dcr_cul_shift.setCellValueFactory(new PropertyValueFactory<Receptor , String>("shifts"));
+        rcp_number.setCellValueFactory(new PropertyValueFactory<>("num"));
+
         receptor_tabel.setItems(observableList);
     }
 
@@ -131,5 +136,36 @@ public class Receptor_List implements Initializable {
         choiceShifts1.getItems().addAll(3 , 6);
         choiceShifts.setValue("AFTERNOON");
         choiceShifts1.setValue(3);
+
+
+        FilteredList<Receptor> filteredList = new FilteredList<>(observableList, b -> true);
+        text_search.textProperty().addListener((observable, oldValue, newValue) -> {
+            filteredList.setPredicate(doctor -> {
+                if (newValue.isEmpty() || newValue.isBlank() || newValue==null){
+                    return  true ;
+                }
+                String search = newValue.toLowerCase();
+                if (doctor.getName().toLowerCase().contains(search)){
+                    return true;
+                } else if (doctor.getLastname().toLowerCase().contains(search)){
+                    return true;
+                } else if (doctor.getEmail().toLowerCase().contains(search)){
+                    return true;
+                } else if (doctor.getUsername().toLowerCase().contains(search)){
+                    return true;
+                }else if (String.valueOf(doctor.getShifts()).contains(search)){
+                    return true;
+                } else if (String.valueOf(doctor.getIncome()).contains(search)){
+                    return true;
+                } else if (String.valueOf(doctor.getNum()).contains(search)){
+                    return true;
+                }else {
+                    return false;
+                }
+            });
+        });
+        SortedList<Receptor> sortedList = new SortedList<>(filteredList);
+        sortedList.comparatorProperty().bind(receptor_tabel.comparatorProperty());
+        receptor_tabel.setItems(sortedList);
     }
 }

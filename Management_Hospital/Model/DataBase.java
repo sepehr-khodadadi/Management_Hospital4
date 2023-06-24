@@ -67,7 +67,7 @@ public class DataBase {
         ResultSet re = statement.executeQuery("SELECT * FROM receptors");
         while (re.next()) {
             receptors.add(new Receptor(re.getString(1), re.getString(2), re.getString(3),
-                    re.getString(4), re.getString(5), re.getInt(6), re.getString(7), re.getInt(8)));
+                    re.getString(4), re.getString(5),re.getInt(6), re.getString(7) , re.getInt(8)));
         }
         closeConeCtiOn();
         return receptors;
@@ -186,7 +186,7 @@ public class DataBase {
         String sql = "insert into receptors (name, lastname, email, username, password , shift , num , income) values" +
                 " ('%s', '%s' ,'%s' ,'%s' ,'%s' , '%s' ,'%d' ,'%d')";
         statement.execute(String.format(sql, receptor.getName(), receptor.getLastname(), receptor.getEmail(),
-                receptor.getUsername(), receptor.getPassword(), receptor.getShifts(), receptor.getNum(), receptor.getIncome(), receptor.getIncome()));
+                receptor.getUsername(), receptor.getPassword(), receptor.getShifts(), receptor.getNum(), receptor.getIncome()));
 
         closeConeCtiOn();
 

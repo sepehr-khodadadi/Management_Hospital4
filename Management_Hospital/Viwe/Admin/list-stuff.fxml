@@ -22,7 +22,7 @@
                   <Font name="Tahoma" size="14.0" />
                </font>
             </Label>
-            <Button mnemonicParsing="false" onAction="#all_personel" prefHeight="70.0" prefWidth="150.0" styleClass="but_Admin" text="ALL PERSONNELS" textFill="WHITE">
+            <Button fx:id="all_but" defaultButton="true" mnemonicParsing="false" onAction="#all_personel" prefHeight="70.0" prefWidth="150.0" styleClass="but_Admin" text="ALL PERSONNELS" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
