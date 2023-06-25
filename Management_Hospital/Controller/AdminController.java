@@ -1,6 +1,13 @@
 package Management_Hospital.Controller;
 
 
+import Management_Hospital.Controller.Admins.Admin_Prof;
+import Management_Hospital.Model.Admin;
+import Management_Hospital.Model.DataBase;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 
 import javafx.fxml.FXMLLoader;
@@ -9,13 +16,15 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 
 
-import javafx.scene.control.Button;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
 
+import java.sql.SQLException;
 import java.util.EventListener;
 import java.util.ResourceBundle;
 
@@ -23,14 +32,17 @@ public class AdminController implements Initializable{
     public BorderPane admin_main;
     public BorderPane staf_list;
     public Button all_but;
+    public Button home_but;
 
 
     public void admin_home() throws IOException {
-        Stage stage = (Stage) admin_main.getScene().getWindow();
 
-        Parent root = FXMLLoader.load(getClass().getResource("../Viwe/Admin/admin-dashbord.fxml" ));
-        stage.setScene(new Scene(root, 1550, 800));
-        stage.show();
+        Parent root = null;
+        root = FXMLLoader.load(getClass().getResource("../Viwe/Admin/home-admin.fxml"));
+
+        this.admin_main.setCenter(root);
+
+
     }
 
     public void admin_list() throws IOException {
@@ -38,23 +50,27 @@ public class AdminController implements Initializable{
         Parent root = null;
         root = FXMLLoader.load(getClass().getResource("../viwe/Admin/list-stuff.fxml"));
 
-        admin_main.setCenter(root);
-        staf_list = (BorderPane) root;
+        this.admin_main.setCenter(root);
+        this.staf_list = (BorderPane) root;
 
         Parent roott = null;
         roott = FXMLLoader.load(getClass().getResource("../Viwe/Admin/Liststaff/list-all.fxml"));
 
-        staf_list.setCenter(roott);
+        this.staf_list.setCenter(roott);
 
 
 
 
     }
 
-    public void admin_hospital(ActionEvent actionEvent) {
+    public void admin_hospital(ActionEvent actionEvent) throws IOException {
+        set_sCen("../Viwe/Admin/admin-hospital.fxml");
+
     }
 
-    public void admin_page(ActionEvent actionEvent) {
+    public void admin_page(ActionEvent actionEvent) throws IOException {
+        set_sCen("../Viwe/Admin/aadminprof.fxml");
+
     }
 
     public void log_out(ActionEvent actionEvent) throws IOException {
@@ -107,9 +123,22 @@ public class AdminController implements Initializable{
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
     }
 
+    //-------------------------------------------------------------------------------------->
+
+
+    public void delete_admin(ActionEvent actionEvent) {
+    }
+
+    public void Update_admin(ActionEvent actionEvent) {
+    }
+
+    public void add_admin(ActionEvent actionEvent) {
+    }
+
+    public void search(ActionEvent actionEvent) {
+    }
 
 
     //<-------------------------------------------------------------------------------------

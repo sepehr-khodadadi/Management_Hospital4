@@ -9,6 +9,7 @@ import java.util.ArrayList;
 public class DataBase {
     private static Connection connection;
     public static Statement statement;
+    public static Admin admin;
 
     private DataBase() {
 
@@ -36,16 +37,23 @@ public class DataBase {
         }
     }
 
-    private static ArrayList<Admin> admins = new ArrayList<>();
 
-    public static ArrayList<Admin> getAdmins() throws SQLException {
+
+    public static ObservableList<Admin> getAdmins() throws SQLException {
+        ObservableList<Admin> admins = FXCollections.observableArrayList();
         makeConeCtiOn();
-        ResultSet re = statement.executeQuery("SELECT * FROM admins");
+        ResultSet re = statement.executeQuery("SELECT * FROM admin");
         while (re.next()) {
-            admins.add(new Admin(re.getString(1), re.getString(2)));
+            admins.add(new Admin(re.getString(1), re.getString(2), re.getString(3), re.getString(4)));
         }
         closeConeCtiOn();
         return admins;
+    }
+
+    public static void deleteAdmin(String user) throws SQLException {
+        makeConeCtiOn();
+        statement.executeUpdate(String.format("delete  from  admin where username='%s'", user));
+        closeConeCtiOn();
     }
 
     public static ObservableList<Doctor> getDoctors() throws SQLException {
@@ -89,29 +97,72 @@ public class DataBase {
 
     public static void addAdmin(Admin admin) throws SQLException {
         makeConeCtiOn();
-        statement.execute(String.format("insert into addmins (username, password) values ('%s', '%s')", admin.getUsername()
-                , admin.getPassword()));
+        statement.execute(String.format("insert into admin (name ,lastname , username, password) values ('%s', '%s' ,'%s', '%s')",
+                admin.getName(), admin.getLastname() ,admin.getUsername(), admin.getPassword()));
         closeConeCtiOn();
     }
 
-    public static void getAdmin(Admin admin) throws SQLException {
+    public static Admin getAdmin(String username , String password ) throws SQLException {
+
         makeConeCtiOn();
+        String sql = "select * from admin where username=? and password=?";
+        ResultSet rs = null;
+        PreparedStatement pre;
 
-        statement.execute(String.format(
-                "delete from admins where username = %s ", admin.getUsername()));
+        try {
+            pre = connection.prepareStatement(sql);
+            pre.setString(1, username);
+            pre.setString(2, password);
+            rs = pre.executeQuery();
 
-        closeConeCtiOn();
+            if (rs.next()) {
+               admin = new Admin(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4));
+
+            }
+
+        }catch (SQLException e){
+            e.printStackTrace();
+            closeConeCtiOn();
+        }
+
+        return admin ;
     }
 
-    public static boolean loginAdmin(Admin admin) throws SQLException {
+    public static Admin getAdminPass(String username , String name ) throws SQLException {
+
         makeConeCtiOn();
-        String sql = "select * from addmins where username=? and password=?";
+        String sql = "select * from admin where username=? and name=?";
+        ResultSet rs = null;
+        PreparedStatement pre;
+
+        try {
+            pre = connection.prepareStatement(sql);
+            pre.setString(1, username);
+            pre.setString(2, name);
+            rs = pre.executeQuery();
+
+            if (rs.next()) {
+               admin = new Admin(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4));
+
+            }
+
+        }catch (SQLException e){
+            e.printStackTrace();
+            closeConeCtiOn();
+        }
+
+        return admin ;
+    }
+
+    public static boolean loginAdmin(String username , String password) throws SQLException {
+        makeConeCtiOn();
+        String sql = "select * from admin where username=? and password=?";
         ResultSet rs = null;
         PreparedStatement pre;
         try {
             pre = connection.prepareStatement(sql);
-            pre.setString(1, admin.getUsername());
-            pre.setString(2, admin.getPassword());
+            pre.setString(1,username);
+            pre.setString(2,password);
             rs = pre.executeQuery();
 
             if (rs.next()) {
@@ -124,6 +175,14 @@ public class DataBase {
         closeConeCtiOn();
         return false;
 
+    }
+
+    public static void setAdmin(Admin admin1) throws SQLException {
+        makeConeCtiOn();
+        statement.executeUpdate(String.format("update admin set name='%s' , lastname='%s', username='%s', password='%s'"
+                ,admin1.getName(), admin1.getLastname(), admin1.getUsername() , admin1.getPassword()));
+        admin = admin1;
+        closeConeCtiOn();
     }
 
 

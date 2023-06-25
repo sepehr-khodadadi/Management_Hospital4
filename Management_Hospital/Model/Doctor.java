@@ -10,6 +10,8 @@ public class Doctor extends Personnel{
     private String patient ;
     private float point ;
 
+
+
     public Doctor(String name, String lastname, String email, String username, String password, String expertise, int income, String patient, float point) {
 
         super(name,lastname,email,username,password);

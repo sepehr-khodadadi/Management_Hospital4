@@ -14,15 +14,18 @@ import java.util.ArrayList;
 
 public class LoginPagecontrol {
 
-
+    public Admin admin;
     public MenuButton hospita;
     public Label lable_temp;
-    public TextField username_admin;
-    public PasswordField password_admin;
+    public  TextField username_admin;
+    public  PasswordField password_admin;
     public TextField show_pass_admin;
     public CheckBox check_box;
     public PasswordField password_doctor;
     public TextField username_doctor;
+    public String user ;
+    public String pass ;
+
 
 
     public void doctor_btn(ActionEvent actionEvent) throws IOException {
@@ -66,12 +69,16 @@ public class LoginPagecontrol {
     }
 
 
-    public void login(ActionEvent actionEvent) throws IOException, SQLException {
+
+    public  void login(ActionEvent actionEvent) throws IOException, SQLException {
         boolean bol = false ;
         if (String.valueOf(Hspit.ADMIN).equals(hospita.getText())){
-            bol = DataBase.loginAdmin(new Admin(username_admin.getText(), password_admin.getText()));
+            bol = DataBase.loginAdmin(username_admin.getText(), password_admin.getText());
             if(bol){
+                DataBase.admin = DataBase.getAdmin(username_admin.getText(), password_admin.getText());
                 change_dashbord("../viwe/Admin/admin-dashbord.fxml");
+
+
             }
             else {
                 System.out.println("error");
