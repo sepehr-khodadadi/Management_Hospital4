@@ -1,21 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.CheckBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.MenuButton?>
-<?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.paint.Color?>
-<?import javafx.scene.paint.LinearGradient?>
-<?import javafx.scene.paint.Stop?>
-<?import javafx.scene.text.Font?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
 
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="500.0" spacing="10.0" styleClass="backgraned1" stylesheets="@../Style/Logi_css.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Management_Hospital.Controller.LoginPagecontrol">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="500.0" spacing="10.0" styleClass="backgraned1" stylesheets="@../Style/Logi_css.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Management_Hospital.Controller.LoginPagecontrol">
    <children>
       <FontAwesomeIcon glyphName="USER_MD" size="15em">
          <fill>
@@ -50,17 +41,22 @@
             <TextField fx:id="username_doctor" prefHeight="31.0" prefWidth="374.0" styleClass="textusername-doctor" />
          </children>
       </VBox>
-      <VBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="78.0" prefWidth="374.0">
+      <Pane prefHeight="78.0" prefWidth="374.0">
          <children>
-            <Label text="PASSWORD" textFill="#767676" />
-            <PasswordField fx:id="password_doctor" prefHeight="30.0" prefWidth="374.0" styleClass="textusername-doctor" />
-            <CheckBox mnemonicParsing="false" prefHeight="26.0" prefWidth="129.0" text="SHOW PASSWORD" textFill="#766f6f">
-               <font>
-                  <Font name="Tahoma" size="12.0" />
-               </font>
-            </CheckBox>
+            <TextField fx:id="show_pass_doc" editable="false" layoutX="63.0" layoutY="26.0" prefHeight="31.0" prefWidth="374.0" />
+            <VBox layoutX="63.0" layoutY="8.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="78.0" prefWidth="374.0">
+               <children>
+                  <Label text="PASSWORD" textFill="#767676" />
+                  <PasswordField fx:id="password_doctor" prefHeight="30.0" prefWidth="374.0" styleClass="textusername-doctor" />
+                  <CheckBox onAction="#click_box" fx:id="check_box" mnemonicParsing="false" prefHeight="26.0" prefWidth="129.0" text="SHOW PASSWORD" textFill="#766f6f">
+                     <font>
+                        <Font name="Tahoma" size="12.0" />
+                     </font>
+                  </CheckBox>
+               </children>
+            </VBox>
          </children>
-      </VBox>
+      </Pane>
       <HBox alignment="BOTTOM_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="57.0" prefWidth="374.0" spacing="30.0">
          <children>
             <Button mnemonicParsing="false" onAction="#login" prefHeight="40.0" prefWidth="497.0" styleClass="btn_doctor" text="LOGIN">

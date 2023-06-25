@@ -54,13 +54,13 @@
                   <Font name="Tahoma" size="12.0" />
                </font>
             </Label>
-            <TextField prefHeight="31.0" prefWidth="374.0" styleClass="textusername-patient" />
+            <TextField fx:id="patient_name" prefHeight="31.0" prefWidth="374.0" styleClass="textusername-patient" />
          </children>
       </VBox>
       <VBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="78.0" prefWidth="374.0">
          <children>
             <Label text="PASSWORD" textFill="#767676" />
-            <PasswordField prefHeight="30.0" prefWidth="374.0" styleClass="textusername-patient" />
+            <PasswordField fx:id="patient_pass" prefHeight="30.0" prefWidth="374.0" styleClass="textusername-patient" />
             <CheckBox mnemonicParsing="false" prefHeight="26.0" prefWidth="129.0" text="SHOW PASSWORD" textFill="#766f6f">
                <font>
                   <Font name="Tahoma" size="12.0" />
@@ -71,7 +71,7 @@
       </VBox>
       <HBox alignment="BOTTOM_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="57.0" prefWidth="374.0" spacing="30.0">
          <children>
-            <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="497.0" styleClass="btn_patient" text="LOGIN">
+            <Button mnemonicParsing="false" onAction="#login" prefHeight="40.0" prefWidth="497.0" styleClass="btn_patient" text="LOGIN">
                <font>
                   <Font name="Tahoma" size="19.0" />
                </font>

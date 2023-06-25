@@ -9,7 +9,6 @@ import javafx.stage.Stage;
 import Management_Hospital.Model.*;
 import java.io.IOException;
 import java.sql.*;
-import java.util.ArrayList;
 
 
 public class LoginPagecontrol {
@@ -25,7 +24,9 @@ public class LoginPagecontrol {
     public TextField username_doctor;
     public String user ;
     public String pass ;
-
+    public TextField patient_name;
+    public PasswordField patient_pass;
+    public TextField show_pass_doc;
 
 
     public void doctor_btn(ActionEvent actionEvent) throws IOException {
@@ -96,24 +97,43 @@ public class LoginPagecontrol {
             }
         }
         if (String.valueOf(Hspit.RECEPTOR).equals(hospita.getText())){
-            change_dashbord("../viwe/receptor-dashbord.fxml");
+            change_dashbord("../viwe/Receptor/receptor-dashbord.fxml");
 
         }
         if (String.valueOf(Hspit.PATIENT).equals(hospita.getText())){
-
+            bol = DataBase.loginPatient(patient_name.getText(), patient_pass.getText());
+            if(bol){
+                change_dashbord("../viwe/Patient/patient-dashbord.fxml");
+            }else {
+                System.out.println("error");
+            }
         }
     }
 
 
     public void click_box(ActionEvent actionEvent) {
         if (check_box.isSelected()){
-            password_admin.setVisible(false);
-            show_pass_admin.setText(password_admin.getText());
-            show_pass_admin.setVisible(true);
+            if(password_admin != null) {
+                password_admin.setVisible(false);
+                show_pass_admin.setText(password_admin.getText());
+                show_pass_admin.setVisible(true);
+
+            }
+            else if(password_doctor != null) {
+                password_doctor.setVisible(false);
+                show_pass_doc.setText(password_doctor.getText());
+                show_pass_doc.setVisible(true);
+            }
         }
         else {
-            password_admin.setVisible(true);
-            show_pass_admin.setVisible(false);
+            if(password_admin != null) {
+                password_admin.setVisible(true);
+                show_pass_admin.setVisible(false);
+            }
+            else if(password_doctor != null) {
+                password_doctor.setVisible(true);
+                show_pass_doc.setVisible(false);
+            }
         }
     }
 

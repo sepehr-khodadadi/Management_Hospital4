@@ -38,7 +38,8 @@ public class Patient_List implements Initializable {
     public void test_t(ActionEvent actionEvent) {
     }
 
-    public void delete_patient(ActionEvent actionEvent) {
+    public void delete_patient(ActionEvent actionEvent) throws SQLException {
+        DataBase.delete_Patient(username_patient.getText());
     }
 
     public void update_patient(ActionEvent actionEvent) {

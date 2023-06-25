@@ -208,6 +208,28 @@ public class DataBase {
         return false;
 
     }
+    public static boolean loginPatient(String username, String password) throws SQLException {
+        makeConeCtiOn();
+        String sql = "select * from patients where username=? and password=?";
+        ResultSet rs;
+        PreparedStatement pre;
+        try {
+            pre = connection.prepareStatement(sql);
+            pre.setString(1, username);
+            pre.setString(2, password);
+            rs = pre.executeQuery();
+
+            if (rs.next()) {
+                return true;
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        closeConeCtiOn();
+        return false;
+
+    }
 
     public static void addDoctor(Doctor doctor) {
         makeConeCtiOn();
@@ -227,6 +249,16 @@ public class DataBase {
     public static void delete_doctor(Doctor doctor) throws SQLException {
         makeConeCtiOn();
         statement.executeUpdate(String.format("delete from doctors where username='%s'", doctor.getUsername()));
+        closeConeCtiOn();
+    }
+    public static void delete_receptor(String user) throws SQLException {
+        makeConeCtiOn();
+        statement.executeUpdate(String.format("delete from doctors where username='%s'", user));
+        closeConeCtiOn();
+    }
+    public static void delete_Patient(String user) throws SQLException {
+        makeConeCtiOn();
+        statement.executeUpdate(String.format("delete from doctors where username='%s'", user));
         closeConeCtiOn();
     }
 
@@ -259,5 +291,6 @@ public class DataBase {
                 patient.getPassword(), patient.getDoctor(), patient.getWallet()));
         closeConeCtiOn();
     }
+
 
 }

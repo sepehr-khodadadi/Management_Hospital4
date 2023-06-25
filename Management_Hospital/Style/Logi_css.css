@@ -65,6 +65,9 @@
 .bag_Admin{
   -fx-background-color: linear-gradient(to bottom right, #0e1f44, #052f6b);
 }
+.bag_Patient{
+  -fx-background-color: linear-gradient(to bottom right, #f50000, #fa4e0f);
+}
 .but_Admin{
   -fx-background-color: null;
   -fx-background-radius: 0px;
@@ -75,12 +78,31 @@
 .but_Admin:focused{
   -fx-background-color: #fff;
   -fx-text-fill: #66f5ff ;
+}
+.but_Patient{
+  -fx-background-color: null;
+  -fx-background-radius: 0px;
+}
+.but_Patient:hover{
+  -fx-background-color: linear-gradient(to bottom right, #ff2d2d, #ff7d14);
+}
+.but_Patient:focused{
+  -fx-background-color: #fff;
+  -fx-text-fill: #66f5ff ;
 }.bag_Doctor{
   -fx-background-color: linear-gradient(to bottom right, #324b3b, #02c58b);
 }
 .but_Doctor{
   -fx-background-color: null;
   -fx-background-radius: 0px;
+}
+.but_PatientD{
+  -fx-background-color: #ff1f00;
+}.but_PatientD:hover{
+  -fx-background-color: #ff5f43;
+}.but_PatientD:focused{
+    -fx-background-color: #fff;
+    -fx-text-fill: #66f5ff ;
 }
 .but_Doctor:hover{
   -fx-background-color: linear-gradient(to bottom right, #1a6257, #0a8f70);

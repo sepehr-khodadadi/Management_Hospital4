@@ -233,4 +233,5 @@ public class Doctor_List implements Initializable {
         }
         reloadTable();
     }
+
 }

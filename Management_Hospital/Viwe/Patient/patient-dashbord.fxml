@@ -8,20 +8,21 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="admin_main" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1550.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Management_Hospital.Controller.AdminController">
+<BorderPane fx:id="dashboard" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1550.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Management_Hospital.Controller.Patient.PatientController">
    <left>
-      <VBox fx:id="main_menu" alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="800.0" prefWidth="200.0" styleClass="bag_Admin" stylesheets="@../../Style/Logi_css.css" BorderPane.alignment="CENTER">
+      <VBox fx:id="main_menu" alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="800.0" prefWidth="200.0" styleClass="bag_Patient" stylesheets="@../../Style/Logi_css.css" BorderPane.alignment="CENTER">
          <children>
             <FontAwesomeIcon fill="WHITE" glyphName="USER" size="10em" wrappingWidth="94.28571319580078">
                <VBox.margin>
                   <Insets top="30.0" />
-               </VBox.margin></FontAwesomeIcon>
-            <Label alignment="TOP_CENTER" prefHeight="44.0" prefWidth="144.0" text="WELCOME ADMIN" textFill="WHITE">
+               </VBox.margin>
+            </FontAwesomeIcon>
+            <Label alignment="TOP_CENTER" prefHeight="44.0" prefWidth="152.0" text="WELCOME PATIENT" textFill="WHITE">
                <font>
                   <Font name="Tahoma" size="17.0" />
                </font>
             </Label>
-            <Button defaultButton="true" mnemonicParsing="false" onAction="#admin_home" prefHeight="85.0" prefWidth="200.0" styleClass="but_Admin" text=" HOME" textFill="WHITE">
+            <Button defaultButton="true" mnemonicParsing="false" onAction="#patient_home" prefHeight="85.0" prefWidth="200.0" styleClass="but_Patient" text=" HOME" textFill="WHITE">
                <font>
                   <Font name="Tahoma" size="15.0" />
                </font>
@@ -32,7 +33,7 @@
                   <Insets right="50.0" />
                </padding>
             </Button>
-            <Button mnemonicParsing="false" onAction="#admin_list" prefHeight="85.0" prefWidth="200.0" styleClass="but_Admin" text=" LIST STAFF" textFill="WHITE">
+            <Button mnemonicParsing="false" onAction="#patient_list" prefHeight="85.0" prefWidth="200.0" styleClass="but_Patient" text=" LIST DOCTORS" textFill="WHITE">
                <font>
                   <Font name="Tahoma" size="14.0" />
                </font>
@@ -46,7 +47,7 @@
                   <Insets right="20.0" />
                </padding>
             </Button>
-            <Button mnemonicParsing="false" onAction="#admin_hospital" prefHeight="85.0" prefWidth="200.0" styleClass="but_Admin" text=" HOSPITAL" textFill="WHITE">
+            <Button mnemonicParsing="false" onAction="#patient_hospital" prefHeight="85.0" prefWidth="200.0" styleClass="but_Patient" text=" HOSPITAL" textFill="WHITE">
                <font>
                   <Font name="Tahoma" size="14.0" />
                </font>
@@ -57,7 +58,7 @@
                   <Insets right="30.0" />
                </padding>
             </Button>
-            <Button mnemonicParsing="false" onAction="#admin_page" prefHeight="85.0" prefWidth="200.0" styleClass="but_Admin" text="ADMIN" textFill="WHITE">
+            <Button mnemonicParsing="false" onAction="#patient_page" prefHeight="85.0" prefWidth="200.0" styleClass="but_Patient" text="PROFAIL" textFill="WHITE">
                <graphic>
                   <FontAwesomeIcon fill="#eaeaea" glyphName="USER" size="20" />
                </graphic>
@@ -68,7 +69,7 @@
                   <Insets right="45.0" />
                </padding>
             </Button>
-            <Button mnemonicParsing="false" onAction="#log_out" prefHeight="85.0" prefWidth="200.0" styleClass="but_Admin" text=" LOGOUT" textFill="WHITE">
+            <Button mnemonicParsing="false" onAction="#log_out" prefHeight="85.0" prefWidth="200.0" styleClass="but_Patient" text=" LOGOUT" textFill="WHITE">
                <font>
                   <Font name="Tahoma" size="15.0" />
                </font>

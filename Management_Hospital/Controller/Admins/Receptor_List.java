@@ -86,8 +86,8 @@ public class Receptor_List implements Initializable {
     }
 
     @FXML
-    void delete_receptor(ActionEvent event) {
-
+    void delete_receptor(ActionEvent event) throws SQLException {
+       DataBase.delete_receptor(username_receptor.getText());
     }
 
     @FXML
